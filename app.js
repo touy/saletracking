@@ -107,21 +107,21 @@ var product={
     createddate:"",
     gui:""
 }
-var warehouseimport={
-    productname:"",
-    productcode:"",
-    productgui:"",
-    price:"",
-    qantity:0,
-    totalvalue:0,
-    approvedby:"",
-    acceptby:"",
-    approveddate:"",
-    preparedby:"",
-    prepareddate:"",
-    description:"",
-    gui:""
-}
+// var warehouseimport={
+//     productname:"",
+//     productcode:"",
+//     productgui:"",
+//     price:"",
+//     qantity:0,
+//     totalvalue:0,
+//     approvedby:"",
+//     acceptby:"",
+//     approveddate:"",
+//     preparedby:"",
+//     prepareddate:"",
+//     description:"",
+//     gui:""
+// }
 var warehouseexport={
     productname:"",
     productcode:"",
@@ -181,15 +181,15 @@ var saledetails={
     gui:""
 }
 
-var auditing={
-    productname:"",
-    productgui:"",
-    quantity:0,
-    quantitydiff:0,
-    approvedby:"",
-    approveddate:"",
-    gui:""
-}
+// var auditing={
+//     productname:"",
+//     productgui:"",
+//     quantity:0,
+//     quantitydiff:0,
+//     approvedby:"",
+//     approveddate:"",
+//     gui:""
+// }
 
 var payment={
     paidby:"",
