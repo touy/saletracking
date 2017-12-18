@@ -26,7 +26,8 @@ var prefix={
     username:"",
     usergui:"",
     businessgui:"",
-    prefix:""
+    prefix:"",
+    gui:''
 }
 var assignedtask={
     username:"",
@@ -201,6 +202,7 @@ var payment={
     receivedkey:"",
     gui:""
 }
+
 var keys={
     name:"",
     description:"",
