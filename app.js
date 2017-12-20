@@ -7,76 +7,64 @@ var user={
     createddate:"",
     lastupdate:"",
     lastlogin:"",
-    role:"" ,// admin , warehouseauditmanager,warehouseauditstaff, salemanager,sale,carriermanager,carrier,customer,cashreceiver 
+    role:[],// admin , warehouse, salemanager (admin),sale,customer,cashreceiver
+    photo:'',    
     businessname:"",
     businessgui:"",
+    usercode:'',
+    isactive:false,
+    totalsale:0,
+    totaldebt:0,
+    salerecord:[[1,0],[12,0]],
+    totaldebt:[[1,1],[12,0]],
     gui:""
 }
-
-var business={
-    name:"",
-    logo:"",
-    ownerusername:"",
-    ownergui:"",
-    createddate:"",
-    lastupdate:"",
-    gui:""
-}
-var prefix={
+var assignedstored={
     username:"",
     usergui:"",
-    businessgui:"",
-    prefix:"",
-    gui:''
-}
-var assignedtask={
-    username:"",
-    usergui:"",
-    taskgui:"",
+    storegui:"",
+    storename:'',
     assigneddate:"",
-    gui:""
-}
-var taskplan={
-    name:"",
-    createddate:"",
-    gui:""
-}
-var taskcompletedbyvisited={
-    completedtime:"",
-    assignedtaskgui:"",
-    iscompleted:false,
-    description:"",
-    preparedby:"",
-    gui:""
+    gui:"",
+    totalsale:0,
+    totaldebt:0,
+    salerecord:[[1,0],[12,0]],
+    totaldebt:[[1,1],[12,0]]
 }
 
-var taskplandetails={
-    taskplanname:"",
-    taskplangui:"",
-    customergui:"",
-    customername:"",
-    createddate:"",
-    expireddate:"",
-    gui:"",
-    renewtype:""// daily ,  weekly (selected dates), monthly (selected dates)
-}
+
 var customer={
     customername:"",
-    customerbusiness:"",
-    customergui:"",
     customerpassword:"",
+    photo:'',
+    description:'',
     phone1:"",
     phone2:"",
     phone3:"",
-    other:"",
-    customerbusinessgui:"",    
+    other:"",   
     email:"",
     facebook:"",
+    customercode:'',
+    gui:"",
+    totalsale:[[1,1],[12,0]],
+    totaldebt:[[1,1],[12,0]]
+}
+var business={
+    customername:'',
+    customergui:'',
+    businessname:'',
+    description:'',
+    website:'',
     lat:"",// latitude
     lon:"",// longitude
     radiation:"",//20m
-    gui:""
+    photo:[],
+    gui:'',    
+    totalsale:[[1,1],[12,0]],
+    totaldebt:[[1,1],[12,0]]
+
 }
+
 var gpslogger={
     lat:"",
     lon:"",
@@ -87,15 +75,17 @@ var gpslogger={
     gpstime:"",
     servertime:""
 }
+
 var visitlog={
     customername:"",
+    businessname:'',
     visitby:"",
     visitdate:"",
-    howlongvisited:"",
     visitstart:"",
     visitend:"",
-    visitvalue:"",
-    sales
+    photo:[],
+    description:'',    
+    gui:''
 }
 var product={
     productname:"",
@@ -106,37 +96,10 @@ var product={
     quantity:0,
     description:"",
     createddate:"",
-    gui:""
-}
-// var warehouseimport={
-//     productname:"",
-//     productcode:"",
-//     productgui:"",
-//     price:"",
-//     qantity:0,
-//     totalvalue:0,
-//     approvedby:"",
-//     acceptby:"",
-//     approveddate:"",
-//     preparedby:"",
-//     prepareddate:"",
-//     description:"",
-//     gui:""
-// }
-var warehouseexport={
-    productname:"",
-    productcode:"",
-    productgui:"",
-    price:"",
-    qantity:0,
-    totalvalue:0,
-    acceptby:"",
-    approvedby:"",
-    approveddate:"",
-    preparedby:"",
-    prepareddate:"",
-    description:"",
-    gui:""
+    gui:"",
+    totalsold:[[1,1],[12,0]],
+    totalsoldvalue:[[1,1],[12,0]],
+    totalreturn:[[1,1],[12,0]]
 }
 
 var wholesaledetails={
@@ -147,27 +110,37 @@ var wholesaledetails={
     qantity:0,
     totalvalue:0,
     gui:"",
-    wholesalegui:""
+    wholesalegui:"",
+
+
 }
 var wholesale={
     acceptby:"",// sale
     acceptkey:"",// from sale
-    preparedby:"",
+    preparedby:"",//prepare by  ware house
+    preparedkey:'',
     prepareddate:"",
+    photo:[],
     gui:"",
     totalvalue:0,
+    status:'', // order pending , approved,
+    code:''
 }
 
 var sale={
     acceptby:"",//customer
     acceptkey:"",// from customer
-    preparedby:"",
+    preparedby:"",//prepare by sale
+    preparedkey:'',
     prepareddate:"",
     soldkey:"",
     receivedkey:"",
+    photo:[],
     paymentgui:"",
+    code:'',
     gui:"",
     totalvalue:0,
+    satus:''//order placed, order cancel , 
 }
 
 var saledetails={
@@ -182,25 +155,22 @@ var saledetails={
     gui:""
 }
 
-// var auditing={
-//     productname:"",
-//     productgui:"",
-//     quantity:0,
-//     quantitydiff:0,
-//     approvedby:"",
-//     approveddate:"",
-//     gui:""
-// }
 
 var payment={
     paidby:"",
     paiddate:"",
     receivedby:"",
+    description:'',
+    photo:[],
+    preparedby:'',
     value:0,
     hasbeenpaid:false,
     paidkey:"",
     receivedkey:"",
-    gui:""
+    createdtime:'',
+    gui:"",
+    code:'',
+    status:''//not yet paid, partial payment, full payment, cancel,
 }
 
 var keys={
@@ -211,4 +181,19 @@ var keys={
     generateby:"",
     keytype:"",// payment , sale , wholesale
     gui:""
+}
+var plantask={
+    taskname:'',
+    username:'',
+    storename:'',
+    storegui:'',
+    createdby:'',
+    createdtime:'',
+    stoptime:'',
+    description:'',
+    target:0,
+    schedule:[{year:2017,month:0,day:[1,2,3,4,5,6,7,8,9,10,11]},{}],
+    resultperplan:[{year:0,month:0,day:[1,2,3,4,5,6,7,8,9,10,11]},{}],
+    gui:'',
+    isactive:false
 }
