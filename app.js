@@ -3,10 +3,10 @@ var user={
     username:"",
     password:"",
     mobile:"",
-    email:"",
-    createddate:"",
+    email:"", 
+    createddate:"", 
     lastupdate:"",
-    lastlogin:"",
+    lastlogin:"", 
     role:[],// admin , warehouse, salemanager (admin),sale,customer,cashreceiver
     photo:'',    
     businessname:"",
