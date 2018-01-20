@@ -19,6 +19,14 @@ var user={
     totaldebt:[[1,1],[12,0]],
     gui:""
 }
+var profile={
+    username:'',
+    usergui:'',
+    logo:'',
+    name:'',
+    description:'',
+    gui:''
+}
 var assignedstored={
     username:"",
     usergui:"",
@@ -36,6 +44,7 @@ var assignedstored={
 var customer={
     customername:"",
     customerpassword:"",
+    customerkeyword:[],
     photo:'',
     description:'',
     phone1:"",
@@ -44,6 +53,7 @@ var customer={
     other:"",   
     email:"",
     facebook:"",
+    isoffline:true,
     customercode:'',
     gui:"",
     totalsale:[[1,1],[12,0]],
@@ -54,18 +64,22 @@ var business={
     customergui:'',
     businessname:'',
     description:'',
+    businesskeyword:[],
     website:'',
     lat:"",// latitude
     lon:"",// longitude
     radiation:"",//20m
     photo:[],
+    isoffline:true,
     gui:'',    
     totalsale:[[1,1],[12,0]],
     totaldebt:[[1,1],[12,0]]
-
 }
 
 var gpslogger={
+    status:[],
+    alert:[],
+    imei:'',
     lat:"",
     lon:"",
     speed:"",
@@ -90,7 +104,7 @@ var visitlog={
 var product={
     productname:"",
     productcode:"",
-    photo:"",
+    photo:[],
     price:"",
     unit:"",
     quantity:0,
@@ -99,7 +113,8 @@ var product={
     gui:"",
     totalsold:[[1,1],[12,0]],
     totalsoldvalue:[[1,1],[12,0]],
-    totalreturn:[[1,1],[12,0]]
+    totalreturn:[[1,1],[12,0]],
+    salerank:1,
 }
 
 var wholesaledetails={
@@ -111,9 +126,9 @@ var wholesaledetails={
     totalvalue:0,
     gui:"",
     wholesalegui:"",
-
-
+    approvedphoto:[],
 }
+
 var wholesale={
     acceptby:"",// sale
     acceptkey:"",// from sale
@@ -123,7 +138,7 @@ var wholesale={
     photo:[],
     gui:"",
     totalvalue:0,
-    status:'', // order pending , approved,
+    status:'', // order pending , approved, returned
     code:''
 }
 
@@ -136,11 +151,11 @@ var sale={
     soldkey:"",
     receivedkey:"",
     photo:[],
-    paymentgui:"",
+    paymentgui:[],
     code:'',
     gui:"",
     totalvalue:0,
-    satus:''//order placed, order cancel , 
+    satus:''//order pending, order cancel , order finished(delivered)
 }
 
 var saledetails={
@@ -148,14 +163,12 @@ var saledetails={
     productname:"",
     productcode:"",
     productgui:"",
-    approvedphoto:"",
+    approvedphoto:[],
     price:0,
     qantity:0,
     totalvalue:0,
     gui:""
 }
-
-
 var payment={
     paidby:"",
     paiddate:"",
@@ -169,8 +182,9 @@ var payment={
     receivedkey:"",
     createdtime:'',
     gui:"",
+    relatedpaymentgui:[],
     code:'',
-    status:''//not yet paid, partial payment, full payment, cancel,
+    status:''//not yet paid, partial payment, full payment, cancel, finished
 }
 
 var keys={
