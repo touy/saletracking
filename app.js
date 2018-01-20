@@ -1,6 +1,6 @@
 
 var user={
-    username:"",
+    username:" ",
     password:"",
     mobile:"",
     email:"", 
