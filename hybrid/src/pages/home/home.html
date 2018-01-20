@@ -1,0 +1,168 @@
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+         <ion-title><img width="64px" height="64px" src="assets/imgs/user.png"/>&nbsp; Sengkham </ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-content>
+      <ion-list>
+        <button menuClose ion-item (click)="openPage(pages[0])">
+           <h4> <ion-icon  name="home"></ion-icon>&nbsp; {{pages[0].title}}</h4> 
+        </button>
+        <button menuClose ion-item (click)="openPage(pages[1])">
+            <h4> <ion-icon  name="md-contacts"></ion-icon>&nbsp; {{pages[1].title}}</h4> 
+         </button>
+         <button menuClose ion-item (click)="openPage(pages[2])">
+            <h4> <ion-icon  name="md-appstore"></ion-icon>&nbsp; {{pages[2].title}}</h4> 
+         </button>
+         <button menuClose ion-item (click)="openPage(pages[3])">
+            <h4> <ion-icon  name="md-git-network"></ion-icon>&nbsp; {{pages[3].title}}</h4> 
+         </button>
+         <button menuClose ion-item (click)="openPage(pages[4])">
+            <h4> <ion-icon  name="md-calculator"></ion-icon>&nbsp; {{pages[4].title}}</h4> 
+         </button>
+         <button menuClose ion-item (click)="openPage(pages[5])">
+            <h4> <ion-icon  name="md-pricetags"></ion-icon>&nbsp; {{pages[5].title}}</h4> 
+         </button>
+         <button menuClose ion-item (click)="openPage(pages[6])">
+            <h4> <ion-icon  name="md-copy"></ion-icon>&nbsp; {{pages[6].title}}</h4> 
+         </button>
+         <button menuClose ion-item (click)="openPage(pages[7])">
+            <h4> <ion-icon  name="md-power"></ion-icon>&nbsp; {{pages[7].title}}</h4> 
+         </button>
+         <button menuClose ion-item (click)="openPage(pages[8])">
+          <h4> <ion-icon  name="md-power"></ion-icon>&nbsp; {{pages[8].title}}</h4> 
+       </button>
+      </ion-list>
+    </ion-content>
+  
+  </ion-menu>
+  
+  
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+  
+  <ion-header>
+      <ion-navbar hideBackButton="true"> 
+         
+        <ion-buttons left>
+            <button ion-button icon-only (click)="presentPopover($event)">
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-buttons>
+        <ion-title>ໜ້າຫຼັກ</ion-title>
+        <ion-buttons end>
+          <button ion-button icon-only (click)="openPopover($event)">
+            <ion-icon name="more"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+
+<ion-content   class="bg-style">
+    <ion-grid>
+        <ion-row> 
+          <ion-col col-4 id="imagepadding">                
+          <img width="128px" height="128px" src="assets/imgs/profile5.jpg"/>
+          </ion-col>
+          <ion-col  id="textcenter">                
+              <img width="250px" height="128px" src="{{imageStore.icon}}"/>
+              </ion-col>
+        
+        </ion-row>
+        <ion-row >
+          <ion-col col-4  id="textcenter">
+           <span>S00912</span>
+          </ion-col>
+          <ion-col id="textcenter">
+            <span> {{imageStore.title}}</span>
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+            <table id="customers">
+                <tr>
+                  <th>ຍອດຂາຍມື້ນີ້</th>
+                  <th>ຍອດຂາຍໜີ້ມື້ນີ້</th>
+                  <th>ຈ່າຍສົດມື້ນີ້</th>
+                </tr>
+                <tr>
+                  <td>200,000</td>
+                  <td>200,000</td>
+                  <td>1,000,000</td>
+                </tr>                             
+              </table>
+        </ion-row>
+      </ion-grid>
+                    
+      <ion-grid>
+          <ion-row>
+              <table id="customers">
+                  <tr>
+                    <th>ຍອດຂາຍທິດນີ້</th>
+                    <th>ຍອດໜີ້ທິດນີ້</th>
+                    <th>ຈ່າຍສົດທິດນີ້</th>
+                  </tr>
+                  <tr>
+                    <td>200,000</td>
+                    <td>200,000</td>
+                    <td>1,000,000</td>
+                  </tr>                             
+                </table>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <table id="customers">
+                    <tr>
+                      <th>ຍອດຂາຍເດືອນນີ້</th>
+                      <th>ຍອດໜີ້ເດືອນນີ້</th>
+                      <th>ຈ່າຍສົດເດືອນນີ້</th>
+                    </tr>
+                    <tr>
+                      <td>200,000</td>
+                      <td>200,000</td>
+                      <td>1,000,000</td>
+                    </tr>                             
+                  </table>
+            </ion-row>
+          </ion-grid>
+
+      <ion-grid>
+          <ion-row> 
+              <ion-item>
+                  
+                     <ion-scroll scrollX style="height:100px;">
+                    <div class="scroll-item">
+                    <ion-col col-33 *ngFor="let post of list">
+                   <div class="card card-1" (click)="ondemand_details(post)">
+                  
+                     <img  src="{{post.product_final_categories_icon}}">
+                      <p style="font-size: 9px;text-align:center;margin-top:10px">{{post.product_final_categories_name}}</p>
+                     </div>
+                      </ion-col>
+                     </div>
+                     </ion-scroll>
+                  
+                  </ion-item>
+          </ion-row>
+
+      <br/>
+
+              <button style="height:70px;font-size:18px;" (click)="presentProfileModal(imageStore)" ion-button [hidden]="imageStore.btn" full>  <ion-icon name="md-add-circle"></ion-icon>&nbsp; &nbsp;ສັ່ງສີ້ນຄ້າ</button>
+
+     
+        </ion-grid>
+       
+           
+
+
+
+
+  </ion-content>
+
+

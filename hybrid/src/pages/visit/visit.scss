@@ -1,0 +1,26 @@
+page-visit {
+    .block {
+        position: relative;
+        .deleteIcon {
+          position: absolute !important;
+          color: #ffffff !important;
+          margin-left: 80% !important;
+        }
+        .deleteIcon:before {
+          font-size: 30px !important;
+        }
+        }
+
+        #map {
+          width: 100%;
+          height: 50%;
+        }
+
+        .scroll {
+          height: 60%
+        }
+
+        .post-image{
+          height: 200px;
+        }
+}
